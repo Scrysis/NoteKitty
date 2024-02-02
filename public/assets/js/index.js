@@ -15,6 +15,8 @@ if (window.location.pathname === '/notes') {
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
+const generateUniqueId = require('generate-unique-id'); //npm package to generate unique ids
+
 // Show an element
 const show = (elem) => {
   elem.style.display = 'inline';
@@ -75,7 +77,12 @@ const renderActiveNote = () => {
 const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
-    text: noteText.value
+    text: noteText.value,
+    id: generateUniqueId({  // npm package function used to generate id for new note
+      length: 32,
+      useLetters: false
+    })
+    
   };
   saveNote(newNote).then(() => {
     getAndRenderNotes();
