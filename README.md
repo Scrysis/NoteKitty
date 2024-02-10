@@ -1,6 +1,6 @@
 # NoteKitty
 
-[!NoteKitty](notescreen.jpg)
+[NoteKitty](notescreen.jpg)
 
 Do you long for a note-taking app that only approximates a real database?
 
